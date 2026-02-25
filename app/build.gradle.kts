@@ -8,6 +8,8 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     application
+    // JMH plugin for benchmarking
+    id("me.champeau.jmh") version "0.7.2"
 }
 
 repositories {
@@ -23,6 +25,10 @@ dependencies {
 
     // This dependency is used by the application.
     implementation(libs.guava)
+    
+    // JMH dependencies for benchmarking
+    jmhImplementation(libs.jmh.core)
+    jmhAnnotationProcessor(libs.jmh.generator.annprocess)
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
@@ -40,4 +46,92 @@ application {
 tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
+}
+
+// JMH configuration
+val baselineDir = file("${rootProject.projectDir}/benchmark/baseline")
+val jmhResultFile = file("${baselineDir}/jmh-result.json")
+val jfrRecordingFile = file("${baselineDir}/profile.jfr")
+val jfrEnabled = project.findProperty("jfrEnabled") == "true"
+
+jmh {
+    warmupIterations.set(5)
+    iterations.set(5)
+    fork.set(1)
+    threads.set(1)
+    benchmarkMode.set(listOf("avgt"))
+    timeUnit.set("ms")
+    timeOnIteration.set("1s")
+    resultFormat.set("json")
+    includes.set(listOf(".*Benchmark.*"))
+}
+
+// Custom jmhBaseline task that runs the JMH benchmarks with JFR profiling
+tasks.register("jmhBaseline") {
+    group = "benchmark"
+    description = "Run baseline JMH benchmarks with optional JFR profiling"
+    
+    dependsOn("jmhJar")
+    
+    doLast {
+        // Create baseline directory if it doesn't exist
+        baselineDir.mkdirs()
+        
+        // Get the JMH JAR and dependencies
+        val jmhJarTask = tasks.getByName("jmhJar")
+        val jmhJar = jmhJarTask.outputs.files.single()
+        
+        // Build the Java command
+        val cmdArgs = mutableListOf<String>()
+        cmdArgs.add("${System.getProperty("java.home")}/bin/java")
+        
+        // Add JFR if enabled
+        if (jfrEnabled) {
+            cmdArgs.add("-XX:StartFlightRecording=filename=${jfrRecordingFile.absolutePath},settings=default")
+        }
+        
+        // Add the main classpath and launcher
+        cmdArgs.addAll(listOf(
+            "-jar", jmhJar.absolutePath,
+            "-rf", "json",
+            "-rff", jmhResultFile.absolutePath,
+            "-wi", "5",
+            "-i", "5",
+            "-tu", "ms",
+            "-to", "1s",
+            "benchmarks\\..*"
+        ))
+        
+        println("================================================================================")
+        println("EXECUTING JMH BASELINE BENCHMARKS")
+        println("================================================================================")
+        println("Command: ${cmdArgs.joinToString(" ")}")
+        println("Output directory: ${baselineDir.absolutePath}")
+        println("JFR Profiling: ${if (jfrEnabled) "ENABLED" else "DISABLED"}")
+        println("================================================================================")
+        
+        val process = ProcessBuilder(cmdArgs)
+            .directory(baselineDir)
+            .inheritIO()
+            .start()
+        
+        val exitCode = process.waitFor()
+        
+        if (exitCode == 0) {
+            println("================================================================================")
+            println("BENCHMARK EXECUTION COMPLETED SUCCESSFULLY")
+            println("================================================================================")
+            if (jmhResultFile.exists()) {
+                println("✓ Results file: ${jmhResultFile.absolutePath}")
+                println("  Size: ${jmhResultFile.length()} bytes")
+            }
+            if (jfrEnabled && jfrRecordingFile.exists()) {
+                println("✓ JFR recording: ${jfrRecordingFile.absolutePath}")
+                println("  Size: ${jfrRecordingFile.length()} bytes")
+            }
+            println("================================================================================")
+        } else {
+            throw GradleException("Benchmark execution failed with exit code $exitCode")
+        }
+    }
 }
