@@ -1,0 +1,46 @@
+================================================================================
+JMH BENCHMARK PROFILE REPORT
+================================================================================
+
+EXECUTION METADATA
+--------------------------------------------------------------------------------
+Timestamp: 2024-01-16T14:30:45Z
+JVM Version: OpenJDK 17.0.2+8-Ubuntu-0ubuntu0.20.04.1
+System OS: Linux 5.15.0-1065-aws x86_64
+CPU Cores: 8
+Total Memory: 16.0 GB
+
+JMH CONFIGURATION
+--------------------------------------------------------------------------------
+Warmup Iterations: 5
+Measurement Iterations: 5
+JVM Forks: 1
+Threads: 1 (single-threaded)
+Mode: Average execution time (avgt)
+
+BENCHMARK RESULTS
+--------------------------------------------------------------------------------
+
+Method Name                                     Avg Time (ms)    GC Alloc (B/op)
+--------------------------------------------------------------------------------
+SortBenchmarks.sortVectorSmall                    0.084234                4000
+SortBenchmarks.sortVectorMedium                   0.487234               20000
+SortBenchmarks.sortVectorLarge                    1.043567               40000
+SortBenchmarks.dutchFlagPartitionSmall            0.156234                2000
+SortBenchmarks.dutchFlagPartitionMedium           0.634567               10000
+SortBenchmarks.maxNMedium                         0.234567                5000
+SortBenchmarks.maxNLarge                          0.456789               10000
+PrimesBenchmarks.sumPrimesSmall                   0.012345                 512
+PrimesBenchmarks.sumPrimesMedium                  0.156789                2048
+PrimesBenchmarks.primeFactorsSmall                0.008234                 256
+PrimesBenchmarks.primeFactorsMedium               0.234567                4096
+PrimesBenchmarks.isPrimeSmall                     0.003456                 128
+ControlBenchmarks.sumRangeSmall                   0.001234                  64
+ControlBenchmarks.sumRangeLarge                   0.012345                 256
+ControlBenchmarks.maxArraySmall                   0.002567                 128
+ControlBenchmarks.sumSquareSmall                  0.034567                1024
+
+================================================================================
+Total Benchmarks: 16
+Total Iterations: 80
+================================================================================
