@@ -1,0 +1,7 @@
+.gradle/
+app/build/
+benchmark-run-output.txt
+gradle-tasks-output.txt
+BENCHMARK_EXECUTION_REPORT_2026-02-27.md
+AGENT_BUG_DETECTION_REPORT.md
+benchmark/baseline/profile.jfr

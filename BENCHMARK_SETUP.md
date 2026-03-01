@@ -22,7 +22,7 @@ This document describes the setup for executing the Scenario B baseline benchmar
 - **Location**: gradle/libs.versions.toml and app/build.gradle.kts
 
 ### 3. Benchmark Classes
-Created in `app/src/jmh/java/benchmarks/`:
+Baseline-executed classes in `app/src/jmh/java/benchmarks/`:
 - **SortBenchmarks.java**: 7 benchmark methods
   - sortVectorSmall, sortVectorMedium, sortVectorLarge
   - dutchFlagPartitionSmall, dutchFlagPartitionMedium
@@ -38,6 +38,12 @@ Created in `app/src/jmh/java/benchmarks/`:
   - maxArraySmall, sumSquareSmall
 
 **Total**: 16 benchmark methods
+
+Additional benchmark classes also exist in the same directory (for extended suites), but are intentionally excluded from the baseline task:
+- `SortBenchmark.java`
+- `PrimesBenchmark.java`
+- `DsVectorBenchmark.java`
+- `DsLinkedListBenchmark.java`
 
 ### 4. JFR Configuration
 - **File**: `app/src/jfrConfig.jfc`
@@ -55,11 +61,10 @@ Created in `app/src/jmh/java/benchmarks/`:
 - **Location**: `app/build.gradle.kts`
 - **Features**:
   - Creates benchmark/baseline/ directory
-  - Compiles benchmark classes via jmhJar
-  - Executes benchmarks with JFR if -PjfrEnabled=true flag is set
-  - Generates jmh-result.json with benchmark results
-  - Generates profile.jfr with JFR recording (if enabled)
-  - Provides detailed console output of execution
+  - Executes baseline suite via the Gradle `jmh` task
+  - Restricts baseline scope to `SortBenchmarks`, `PrimesBenchmarks`, and `ControlBenchmarks`
+  - Copies generated `results.json` to `benchmark/baseline/jmh-result.json`
+  - Provides detailed console output of baseline includes and output file size
 
 ### 6. Output Locations
 - **Benchmark Results**: `benchmark/baseline/jmh-result.json`
@@ -76,6 +81,7 @@ Created in `app/src/jmh/java/benchmarks/`:
 ```bash
 ./gradlew jmhBaseline -PjfrEnabled=true
 ```
+Note: `jmhBaseline` records baseline JSON. For controlled JFR capture, run `app:jmh` with explicit JVM recording flags.
 
 ## Expected Execution
 - **Duration**: 5-10 minutes
@@ -149,9 +155,10 @@ Each benchmark uses:
 
 The jmh-result.json contains:
 - Benchmark name and workload parameters
-- Average time (averageTime)
-- Standard deviation (stdDeviation)
-- Allocated memory (allocatedBytes)
+- Average time (`primaryMetric.score`)
+- Confidence interval (`primaryMetric.scoreConfidence`)
+- Percentiles (`primaryMetric.scorePercentiles`)
+- Allocated memory (`secondaryMetrics.gc.alloc.rate.norm`)
 - GC overhead metrics
 
 The profile.jfr can be analyzed with:

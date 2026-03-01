@@ -1,647 +1,852 @@
 [
-  {
-    "jmhVersion": "1.36",
-    "benchmark": "benchmarks.SortBenchmarks.sortVectorSmall",
-    "mode": "avgt",
-    "threads": 1,
-    "forks": 1,
-    "warmupIterations": 5,
-    "warmupTime": "10 s",
-    "warmupBatchSize": 0,
-    "measurementIterations": 5,
-    "measurementTime": "10 s",
-    "measurementBatchSize": 0,
-    "params": {},
-    "metadata": {
-      "os.name": "Linux",
-      "os.version": "5.15.0-1065-aws",
-      "os.arch": "x86_64",
-      "java.version": "17.0.2",
-      "java.vm.name": "OpenJDK 64-Bit Server VM",
-      "java.vm.version": "17.0.2+8-Ubuntu-0ubuntu0.20.04.1"
+    {
+        "jmhVersion" : "1.36",
+        "benchmark" : "benchmarks.ControlBenchmarks.maxArraySmall",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "C:\\Users\\BiaDigi\\.gradle\\jdks\\eclipse_adoptium-17-amd64-windows\\jdk-17.0.17+10\\bin\\java.exe",
+        "jvmArgs" : [
+            "-Dfile.encoding=windows-1256",
+            "-Djava.io.tmpdir=C:\\Users\\BiaDigi\\Desktop\\sample java\\sample-project-java\\app\\build\\tmp\\jmh",
+            "-Duser.country=US",
+            "-Duser.language=en",
+            "-Duser.variant"
+        ],
+        "jdkVersion" : "17.0.17",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "17.0.17+10",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 2,
+        "measurementTime" : "300 ms",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 3.182041137805218E-5,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 3.1327969309086135E-5,
+                "50.0" : 3.182041137805218E-5,
+                "90.0" : 3.231285344701822E-5,
+                "95.0" : 3.231285344701822E-5,
+                "99.0" : 3.231285344701822E-5,
+                "99.9" : 3.231285344701822E-5,
+                "99.99" : 3.231285344701822E-5,
+                "99.999" : 3.231285344701822E-5,
+                "99.9999" : 3.231285344701822E-5,
+                "100.0" : 3.231285344701822E-5
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    3.231285344701822E-5,
+                    3.1327969309086135E-5
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
     },
-    "primaryMetric": {
-      "score": 0.084234,
-      "scoreErrorConfidence": 0.95,
-      "scoreConfidence": [
-        0.080123,
-        0.088345
-      ],
-      "scoreUnit": "ms/op",
-      "rawData": [
-        [
-          0.082,
-          0.085,
-          0.084,
-          0.086,
-          0.083
-        ]
-      ],
-      "scorePercentiles": {
-        "0.0": 0.082,
-        "50.0": 0.084,
-        "90.0": 0.085,
-        "95.0": 0.086,
-        "99.0": 0.086,
-        "99.9": 0.086,
-        "100.0": 0.086
-      }
+    {
+        "jmhVersion" : "1.36",
+        "benchmark" : "benchmarks.ControlBenchmarks.sumRangeLarge",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "C:\\Users\\BiaDigi\\.gradle\\jdks\\eclipse_adoptium-17-amd64-windows\\jdk-17.0.17+10\\bin\\java.exe",
+        "jvmArgs" : [
+            "-Dfile.encoding=windows-1256",
+            "-Djava.io.tmpdir=C:\\Users\\BiaDigi\\Desktop\\sample java\\sample-project-java\\app\\build\\tmp\\jmh",
+            "-Duser.country=US",
+            "-Duser.language=en",
+            "-Duser.variant"
+        ],
+        "jdkVersion" : "17.0.17",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "17.0.17+10",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 2,
+        "measurementTime" : "300 ms",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 0.011276170923793509,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 0.011143019268163338,
+                "50.0" : 0.011276170923793509,
+                "90.0" : 0.011409322579423682,
+                "95.0" : 0.011409322579423682,
+                "99.0" : 0.011409322579423682,
+                "99.9" : 0.011409322579423682,
+                "99.99" : 0.011409322579423682,
+                "99.999" : 0.011409322579423682,
+                "99.9999" : 0.011409322579423682,
+                "100.0" : 0.011409322579423682
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    0.011409322579423682,
+                    0.011143019268163338
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
     },
-    "secondaryMetrics": {
-      "gc.alloc.rate": {
-        "score": 47613.856,
-        "scoreUnit": "B/sec"
-      },
-      "gc.alloc.rate.norm": {
-        "score": 4000.0,
-        "scoreUnit": "B/op"
-      }
+    {
+        "jmhVersion" : "1.36",
+        "benchmark" : "benchmarks.ControlBenchmarks.sumRangeSmall",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "C:\\Users\\BiaDigi\\.gradle\\jdks\\eclipse_adoptium-17-amd64-windows\\jdk-17.0.17+10\\bin\\java.exe",
+        "jvmArgs" : [
+            "-Dfile.encoding=windows-1256",
+            "-Djava.io.tmpdir=C:\\Users\\BiaDigi\\Desktop\\sample java\\sample-project-java\\app\\build\\tmp\\jmh",
+            "-Duser.country=US",
+            "-Duser.language=en",
+            "-Duser.variant"
+        ],
+        "jdkVersion" : "17.0.17",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "17.0.17+10",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 2,
+        "measurementTime" : "300 ms",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 7.091977635709058E-5,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 7.0144412419774E-5,
+                "50.0" : 7.091977635709058E-5,
+                "90.0" : 7.169514029440715E-5,
+                "95.0" : 7.169514029440715E-5,
+                "99.0" : 7.169514029440715E-5,
+                "99.9" : 7.169514029440715E-5,
+                "99.99" : 7.169514029440715E-5,
+                "99.999" : 7.169514029440715E-5,
+                "99.9999" : 7.169514029440715E-5,
+                "100.0" : 7.169514029440715E-5
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    7.169514029440715E-5,
+                    7.0144412419774E-5
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
     },
-    "iterationCount": 5
-  },
-  {
-    "jmhVersion": "1.36",
-    "benchmark": "benchmarks.SortBenchmarks.sortVectorMedium",
-    "mode": "avgt",
-    "threads": 1,
-    "forks": 1,
-    "warmupIterations": 5,
-    "warmupTime": "10 s",
-    "warmupBatchSize": 0,
-    "measurementIterations": 5,
-    "measurementTime": "10 s",
-    "measurementBatchSize": 0,
-    "params": {},
-    "primaryMetric": {
-      "score": 0.487234,
-      "scoreErrorConfidence": 0.95,
-      "scoreConfidence": [
-        0.465123,
-        0.509345
-      ],
-      "scoreUnit": "ms/op",
-      "scorePercentiles": {
-        "0.0": 0.465,
-        "50.0": 0.487,
-        "90.0": 0.495,
-        "95.0": 0.505,
-        "99.0": 0.509,
-        "99.9": 0.509,
-        "100.0": 0.509
-      }
+    {
+        "jmhVersion" : "1.36",
+        "benchmark" : "benchmarks.ControlBenchmarks.sumSquareSmall",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "C:\\Users\\BiaDigi\\.gradle\\jdks\\eclipse_adoptium-17-amd64-windows\\jdk-17.0.17+10\\bin\\java.exe",
+        "jvmArgs" : [
+            "-Dfile.encoding=windows-1256",
+            "-Djava.io.tmpdir=C:\\Users\\BiaDigi\\Desktop\\sample java\\sample-project-java\\app\\build\\tmp\\jmh",
+            "-Duser.country=US",
+            "-Duser.language=en",
+            "-Duser.variant"
+        ],
+        "jdkVersion" : "17.0.17",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "17.0.17+10",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 2,
+        "measurementTime" : "300 ms",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 9.296462808218106E-4,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 9.121951146777364E-4,
+                "50.0" : 9.296462808218106E-4,
+                "90.0" : 9.470974469658848E-4,
+                "95.0" : 9.470974469658848E-4,
+                "99.0" : 9.470974469658848E-4,
+                "99.9" : 9.470974469658848E-4,
+                "99.99" : 9.470974469658848E-4,
+                "99.999" : 9.470974469658848E-4,
+                "99.9999" : 9.470974469658848E-4,
+                "100.0" : 9.470974469658848E-4
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    9.121951146777364E-4,
+                    9.470974469658848E-4
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
     },
-    "secondaryMetrics": {
-      "gc.alloc.rate.norm": {
-        "score": 20000.0,
-        "scoreUnit": "B/op"
-      }
+    {
+        "jmhVersion" : "1.36",
+        "benchmark" : "benchmarks.PrimesBenchmarks.isPrimeSmall",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "C:\\Users\\BiaDigi\\.gradle\\jdks\\eclipse_adoptium-17-amd64-windows\\jdk-17.0.17+10\\bin\\java.exe",
+        "jvmArgs" : [
+            "-Dfile.encoding=windows-1256",
+            "-Djava.io.tmpdir=C:\\Users\\BiaDigi\\Desktop\\sample java\\sample-project-java\\app\\build\\tmp\\jmh",
+            "-Duser.country=US",
+            "-Duser.language=en",
+            "-Duser.variant"
+        ],
+        "jdkVersion" : "17.0.17",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "17.0.17+10",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 2,
+        "measurementTime" : "300 ms",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 1.9084394755941974E-5,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 1.9073260824640855E-5,
+                "50.0" : 1.9084394755941974E-5,
+                "90.0" : 1.909552868724309E-5,
+                "95.0" : 1.909552868724309E-5,
+                "99.0" : 1.909552868724309E-5,
+                "99.9" : 1.909552868724309E-5,
+                "99.99" : 1.909552868724309E-5,
+                "99.999" : 1.909552868724309E-5,
+                "99.9999" : 1.909552868724309E-5,
+                "100.0" : 1.909552868724309E-5
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    1.909552868724309E-5,
+                    1.9073260824640855E-5
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
     },
-    "iterationCount": 5
-  },
-  {
-    "jmhVersion": "1.36",
-    "benchmark": "benchmarks.SortBenchmarks.sortVectorLarge",
-    "mode": "avgt",
-    "threads": 1,
-    "forks": 1,
-    "warmupIterations": 5,
-    "warmupTime": "10 s",
-    "warmupBatchSize": 0,
-    "measurementIterations": 5,
-    "measurementTime": "10 s",
-    "measurementBatchSize": 0,
-    "params": {},
-    "primaryMetric": {
-      "score": 1.043567,
-      "scoreErrorConfidence": 0.95,
-      "scoreConfidence": [
-        0.995234,
-        1.0919
-      ],
-      "scoreUnit": "ms/op",
-      "scorePercentiles": {
-        "0.0": 0.995,
-        "50.0": 1.043,
-        "90.0": 1.068,
-        "95.0": 1.089,
-        "99.0": 1.089,
-        "99.9": 1.089,
-        "100.0": 1.089
-      }
+    {
+        "jmhVersion" : "1.36",
+        "benchmark" : "benchmarks.PrimesBenchmarks.primeFactorsMedium",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "C:\\Users\\BiaDigi\\.gradle\\jdks\\eclipse_adoptium-17-amd64-windows\\jdk-17.0.17+10\\bin\\java.exe",
+        "jvmArgs" : [
+            "-Dfile.encoding=windows-1256",
+            "-Djava.io.tmpdir=C:\\Users\\BiaDigi\\Desktop\\sample java\\sample-project-java\\app\\build\\tmp\\jmh",
+            "-Duser.country=US",
+            "-Duser.language=en",
+            "-Duser.variant"
+        ],
+        "jdkVersion" : "17.0.17",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "17.0.17+10",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 2,
+        "measurementTime" : "300 ms",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 2.869719072743306E-4,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 2.8695184860835E-4,
+                "50.0" : 2.869719072743306E-4,
+                "90.0" : 2.869919659403112E-4,
+                "95.0" : 2.869919659403112E-4,
+                "99.0" : 2.869919659403112E-4,
+                "99.9" : 2.869919659403112E-4,
+                "99.99" : 2.869919659403112E-4,
+                "99.999" : 2.869919659403112E-4,
+                "99.9999" : 2.869919659403112E-4,
+                "100.0" : 2.869919659403112E-4
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    2.869919659403112E-4,
+                    2.8695184860835E-4
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
     },
-    "secondaryMetrics": {
-      "gc.alloc.rate.norm": {
-        "score": 40000.0,
-        "scoreUnit": "B/op"
-      }
+    {
+        "jmhVersion" : "1.36",
+        "benchmark" : "benchmarks.PrimesBenchmarks.primeFactorsSmall",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "C:\\Users\\BiaDigi\\.gradle\\jdks\\eclipse_adoptium-17-amd64-windows\\jdk-17.0.17+10\\bin\\java.exe",
+        "jvmArgs" : [
+            "-Dfile.encoding=windows-1256",
+            "-Djava.io.tmpdir=C:\\Users\\BiaDigi\\Desktop\\sample java\\sample-project-java\\app\\build\\tmp\\jmh",
+            "-Duser.country=US",
+            "-Duser.language=en",
+            "-Duser.variant"
+        ],
+        "jdkVersion" : "17.0.17",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "17.0.17+10",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 2,
+        "measurementTime" : "300 ms",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 1.7226364513710268E-4,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 1.715316265694045E-4,
+                "50.0" : 1.7226364513710268E-4,
+                "90.0" : 1.7299566370480081E-4,
+                "95.0" : 1.7299566370480081E-4,
+                "99.0" : 1.7299566370480081E-4,
+                "99.9" : 1.7299566370480081E-4,
+                "99.99" : 1.7299566370480081E-4,
+                "99.999" : 1.7299566370480081E-4,
+                "99.9999" : 1.7299566370480081E-4,
+                "100.0" : 1.7299566370480081E-4
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    1.715316265694045E-4,
+                    1.7299566370480081E-4
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
     },
-    "iterationCount": 5
-  },
-  {
-    "jmhVersion": "1.36",
-    "benchmark": "benchmarks.SortBenchmarks.dutchFlagPartitionSmall",
-    "mode": "avgt",
-    "threads": 1,
-    "forks": 1,
-    "warmupIterations": 5,
-    "warmupTime": "10 s",
-    "warmupBatchSize": 0,
-    "measurementIterations": 5,
-    "measurementTime": "10 s",
-    "measurementBatchSize": 0,
-    "params": {},
-    "primaryMetric": {
-      "score": 0.156234,
-      "scoreErrorConfidence": 0.95,
-      "scoreConfidence": [
-        0.148345,
-        0.164123
-      ],
-      "scoreUnit": "ms/op",
-      "scorePercentiles": {
-        "0.0": 0.148,
-        "50.0": 0.156,
-        "90.0": 0.161,
-        "95.0": 0.163,
-        "99.0": 0.164,
-        "99.9": 0.164,
-        "100.0": 0.164
-      }
+    {
+        "jmhVersion" : "1.36",
+        "benchmark" : "benchmarks.PrimesBenchmarks.sumPrimesMedium",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "C:\\Users\\BiaDigi\\.gradle\\jdks\\eclipse_adoptium-17-amd64-windows\\jdk-17.0.17+10\\bin\\java.exe",
+        "jvmArgs" : [
+            "-Dfile.encoding=windows-1256",
+            "-Djava.io.tmpdir=C:\\Users\\BiaDigi\\Desktop\\sample java\\sample-project-java\\app\\build\\tmp\\jmh",
+            "-Duser.country=US",
+            "-Duser.language=en",
+            "-Duser.variant"
+        ],
+        "jdkVersion" : "17.0.17",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "17.0.17+10",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 2,
+        "measurementTime" : "300 ms",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 0.004128545808915728,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 0.004116177354055113,
+                "50.0" : 0.004128545808915728,
+                "90.0" : 0.004140914263776343,
+                "95.0" : 0.004140914263776343,
+                "99.0" : 0.004140914263776343,
+                "99.9" : 0.004140914263776343,
+                "99.99" : 0.004140914263776343,
+                "99.999" : 0.004140914263776343,
+                "99.9999" : 0.004140914263776343,
+                "100.0" : 0.004140914263776343
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    0.004140914263776343,
+                    0.004116177354055113
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
     },
-    "secondaryMetrics": {
-      "gc.alloc.rate.norm": {
-        "score": 2000.0,
-        "scoreUnit": "B/op"
-      }
+    {
+        "jmhVersion" : "1.36",
+        "benchmark" : "benchmarks.PrimesBenchmarks.sumPrimesSmall",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "C:\\Users\\BiaDigi\\.gradle\\jdks\\eclipse_adoptium-17-amd64-windows\\jdk-17.0.17+10\\bin\\java.exe",
+        "jvmArgs" : [
+            "-Dfile.encoding=windows-1256",
+            "-Djava.io.tmpdir=C:\\Users\\BiaDigi\\Desktop\\sample java\\sample-project-java\\app\\build\\tmp\\jmh",
+            "-Duser.country=US",
+            "-Duser.language=en",
+            "-Duser.variant"
+        ],
+        "jdkVersion" : "17.0.17",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "17.0.17+10",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 2,
+        "measurementTime" : "300 ms",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 3.429537960627411E-4,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 3.3667680157860693E-4,
+                "50.0" : 3.429537960627411E-4,
+                "90.0" : 3.492307905468754E-4,
+                "95.0" : 3.492307905468754E-4,
+                "99.0" : 3.492307905468754E-4,
+                "99.9" : 3.492307905468754E-4,
+                "99.99" : 3.492307905468754E-4,
+                "99.999" : 3.492307905468754E-4,
+                "99.9999" : 3.492307905468754E-4,
+                "100.0" : 3.492307905468754E-4
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    3.492307905468754E-4,
+                    3.3667680157860693E-4
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
     },
-    "iterationCount": 5
-  },
-  {
-    "jmhVersion": "1.36",
-    "benchmark": "benchmarks.SortBenchmarks.dutchFlagPartitionMedium",
-    "mode": "avgt",
-    "threads": 1,
-    "forks": 1,
-    "warmupIterations": 5,
-    "warmupTime": "10 s",
-    "warmupBatchSize": 0,
-    "measurementIterations": 5,
-    "measurementTime": "10 s",
-    "measurementBatchSize": 0,
-    "params": {},
-    "primaryMetric": {
-      "score": 0.634567,
-      "scoreErrorConfidence": 0.95,
-      "scoreConfidence": [
-        0.603234,
-        0.6659
-      ],
-      "scoreUnit": "ms/op",
-      "scorePercentiles": {
-        "0.0": 0.603,
-        "50.0": 0.634,
-        "90.0": 0.652,
-        "95.0": 0.663,
-        "99.0": 0.666,
-        "99.9": 0.666,
-        "100.0": 0.666
-      }
+    {
+        "jmhVersion" : "1.36",
+        "benchmark" : "benchmarks.SortBenchmarks.dutchFlagPartitionMedium",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "C:\\Users\\BiaDigi\\.gradle\\jdks\\eclipse_adoptium-17-amd64-windows\\jdk-17.0.17+10\\bin\\java.exe",
+        "jvmArgs" : [
+            "-Dfile.encoding=windows-1256",
+            "-Djava.io.tmpdir=C:\\Users\\BiaDigi\\Desktop\\sample java\\sample-project-java\\app\\build\\tmp\\jmh",
+            "-Duser.country=US",
+            "-Duser.language=en",
+            "-Duser.variant"
+        ],
+        "jdkVersion" : "17.0.17",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "17.0.17+10",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 2,
+        "measurementTime" : "300 ms",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 0.2638143125541019,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 0.26325520206362857,
+                "50.0" : 0.2638143125541019,
+                "90.0" : 0.2643734230445753,
+                "95.0" : 0.2643734230445753,
+                "99.0" : 0.2643734230445753,
+                "99.9" : 0.2643734230445753,
+                "99.99" : 0.2643734230445753,
+                "99.999" : 0.2643734230445753,
+                "99.9999" : 0.2643734230445753,
+                "100.0" : 0.2643734230445753
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    0.26325520206362857,
+                    0.2643734230445753
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
     },
-    "secondaryMetrics": {
-      "gc.alloc.rate.norm": {
-        "score": 10000.0,
-        "scoreUnit": "B/op"
-      }
+    {
+        "jmhVersion" : "1.36",
+        "benchmark" : "benchmarks.SortBenchmarks.dutchFlagPartitionSmall",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "C:\\Users\\BiaDigi\\.gradle\\jdks\\eclipse_adoptium-17-amd64-windows\\jdk-17.0.17+10\\bin\\java.exe",
+        "jvmArgs" : [
+            "-Dfile.encoding=windows-1256",
+            "-Djava.io.tmpdir=C:\\Users\\BiaDigi\\Desktop\\sample java\\sample-project-java\\app\\build\\tmp\\jmh",
+            "-Duser.country=US",
+            "-Duser.language=en",
+            "-Duser.variant"
+        ],
+        "jdkVersion" : "17.0.17",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "17.0.17+10",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 2,
+        "measurementTime" : "300 ms",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 0.055499966114583514,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 0.0552151663938898,
+                "50.0" : 0.055499966114583514,
+                "90.0" : 0.05578476583527723,
+                "95.0" : 0.05578476583527723,
+                "99.0" : 0.05578476583527723,
+                "99.9" : 0.05578476583527723,
+                "99.99" : 0.05578476583527723,
+                "99.999" : 0.05578476583527723,
+                "99.9999" : 0.05578476583527723,
+                "100.0" : 0.05578476583527723
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    0.0552151663938898,
+                    0.05578476583527723
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
     },
-    "iterationCount": 5
-  },
-  {
-    "jmhVersion": "1.36",
-    "benchmark": "benchmarks.SortBenchmarks.maxNMedium",
-    "mode": "avgt",
-    "threads": 1,
-    "forks": 1,
-    "warmupIterations": 5,
-    "warmupTime": "10 s",
-    "warmupBatchSize": 0,
-    "measurementIterations": 5,
-    "measurementTime": "10 s",
-    "measurementBatchSize": 0,
-    "params": {},
-    "primaryMetric": {
-      "score": 0.234567,
-      "scoreErrorConfidence": 0.95,
-      "scoreConfidence": [
-        0.223145,
-        0.245989
-      ],
-      "scoreUnit": "ms/op",
-      "scorePercentiles": {
-        "0.0": 0.223,
-        "50.0": 0.234,
-        "90.0": 0.241,
-        "95.0": 0.244,
-        "99.0": 0.246,
-        "99.9": 0.246,
-        "100.0": 0.246
-      }
+    {
+        "jmhVersion" : "1.36",
+        "benchmark" : "benchmarks.SortBenchmarks.maxNLarge",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "C:\\Users\\BiaDigi\\.gradle\\jdks\\eclipse_adoptium-17-amd64-windows\\jdk-17.0.17+10\\bin\\java.exe",
+        "jvmArgs" : [
+            "-Dfile.encoding=windows-1256",
+            "-Djava.io.tmpdir=C:\\Users\\BiaDigi\\Desktop\\sample java\\sample-project-java\\app\\build\\tmp\\jmh",
+            "-Duser.country=US",
+            "-Duser.language=en",
+            "-Duser.variant"
+        ],
+        "jdkVersion" : "17.0.17",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "17.0.17+10",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 2,
+        "measurementTime" : "300 ms",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 0.3394503845154872,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 0.3384001118568233,
+                "50.0" : 0.3394503845154872,
+                "90.0" : 0.3405006571741511,
+                "95.0" : 0.3405006571741511,
+                "99.0" : 0.3405006571741511,
+                "99.9" : 0.3405006571741511,
+                "99.99" : 0.3405006571741511,
+                "99.999" : 0.3405006571741511,
+                "99.9999" : 0.3405006571741511,
+                "100.0" : 0.3405006571741511
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    0.3384001118568233,
+                    0.3405006571741511
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
     },
-    "secondaryMetrics": {
-      "gc.alloc.rate.norm": {
-        "score": 5000.0,
-        "scoreUnit": "B/op"
-      }
+    {
+        "jmhVersion" : "1.36",
+        "benchmark" : "benchmarks.SortBenchmarks.maxNMedium",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "C:\\Users\\BiaDigi\\.gradle\\jdks\\eclipse_adoptium-17-amd64-windows\\jdk-17.0.17+10\\bin\\java.exe",
+        "jvmArgs" : [
+            "-Dfile.encoding=windows-1256",
+            "-Djava.io.tmpdir=C:\\Users\\BiaDigi\\Desktop\\sample java\\sample-project-java\\app\\build\\tmp\\jmh",
+            "-Duser.country=US",
+            "-Duser.language=en",
+            "-Duser.variant"
+        ],
+        "jdkVersion" : "17.0.17",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "17.0.17+10",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 2,
+        "measurementTime" : "300 ms",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 0.1794848763955343,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 0.17934929824561405,
+                "50.0" : 0.1794848763955343,
+                "90.0" : 0.17962045454545456,
+                "95.0" : 0.17962045454545456,
+                "99.0" : 0.17962045454545456,
+                "99.9" : 0.17962045454545456,
+                "99.99" : 0.17962045454545456,
+                "99.999" : 0.17962045454545456,
+                "99.9999" : 0.17962045454545456,
+                "100.0" : 0.17962045454545456
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    0.17934929824561405,
+                    0.17962045454545456
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
     },
-    "iterationCount": 5
-  },
-  {
-    "jmhVersion": "1.36",
-    "benchmark": "benchmarks.SortBenchmarks.maxNLarge",
-    "mode": "avgt",
-    "threads": 1,
-    "forks": 1,
-    "warmupIterations": 5,
-    "warmupTime": "10 s",
-    "warmupBatchSize": 0,
-    "measurementIterations": 5,
-    "measurementTime": "10 s",
-    "measurementBatchSize": 0,
-    "params": {},
-    "primaryMetric": {
-      "score": 0.456789,
-      "scoreErrorConfidence": 0.95,
-      "scoreConfidence": [
-        0.434123,
-        0.479455
-      ],
-      "scoreUnit": "ms/op",
-      "scorePercentiles": {
-        "0.0": 0.434,
-        "50.0": 0.456,
-        "90.0": 0.469,
-        "95.0": 0.476,
-        "99.0": 0.479,
-        "99.9": 0.479,
-        "100.0": 0.479
-      }
+    {
+        "jmhVersion" : "1.36",
+        "benchmark" : "benchmarks.SortBenchmarks.sortVectorLarge",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "C:\\Users\\BiaDigi\\.gradle\\jdks\\eclipse_adoptium-17-amd64-windows\\jdk-17.0.17+10\\bin\\java.exe",
+        "jvmArgs" : [
+            "-Dfile.encoding=windows-1256",
+            "-Djava.io.tmpdir=C:\\Users\\BiaDigi\\Desktop\\sample java\\sample-project-java\\app\\build\\tmp\\jmh",
+            "-Duser.country=US",
+            "-Duser.language=en",
+            "-Duser.variant"
+        ],
+        "jdkVersion" : "17.0.17",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "17.0.17+10",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 2,
+        "measurementTime" : "300 ms",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 1.4745703631310163,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 1.438055504587156,
+                "50.0" : 1.4745703631310163,
+                "90.0" : 1.511085221674877,
+                "95.0" : 1.511085221674877,
+                "99.0" : 1.511085221674877,
+                "99.9" : 1.511085221674877,
+                "99.99" : 1.511085221674877,
+                "99.999" : 1.511085221674877,
+                "99.9999" : 1.511085221674877,
+                "100.0" : 1.511085221674877
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    1.511085221674877,
+                    1.438055504587156
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
     },
-    "secondaryMetrics": {
-      "gc.alloc.rate.norm": {
-        "score": 10000.0,
-        "scoreUnit": "B/op"
-      }
+    {
+        "jmhVersion" : "1.36",
+        "benchmark" : "benchmarks.SortBenchmarks.sortVectorMedium",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "C:\\Users\\BiaDigi\\.gradle\\jdks\\eclipse_adoptium-17-amd64-windows\\jdk-17.0.17+10\\bin\\java.exe",
+        "jvmArgs" : [
+            "-Dfile.encoding=windows-1256",
+            "-Djava.io.tmpdir=C:\\Users\\BiaDigi\\Desktop\\sample java\\sample-project-java\\app\\build\\tmp\\jmh",
+            "-Duser.country=US",
+            "-Duser.language=en",
+            "-Duser.variant"
+        ],
+        "jdkVersion" : "17.0.17",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "17.0.17+10",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 2,
+        "measurementTime" : "300 ms",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 0.6633733788957488,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 0.6504920940170941,
+                "50.0" : 0.6633733788957488,
+                "90.0" : 0.6762546637744035,
+                "95.0" : 0.6762546637744035,
+                "99.0" : 0.6762546637744035,
+                "99.9" : 0.6762546637744035,
+                "99.99" : 0.6762546637744035,
+                "99.999" : 0.6762546637744035,
+                "99.9999" : 0.6762546637744035,
+                "100.0" : 0.6762546637744035
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    0.6504920940170941,
+                    0.6762546637744035
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
     },
-    "iterationCount": 5
-  },
-  {
-    "jmhVersion": "1.36",
-    "benchmark": "benchmarks.PrimesBenchmarks.sumPrimesSmall",
-    "mode": "avgt",
-    "threads": 1,
-    "forks": 1,
-    "warmupIterations": 5,
-    "warmupTime": "10 s",
-    "warmupBatchSize": 0,
-    "measurementIterations": 5,
-    "measurementTime": "10 s",
-    "measurementBatchSize": 0,
-    "params": {},
-    "primaryMetric": {
-      "score": 0.012345,
-      "scoreErrorConfidence": 0.95,
-      "scoreConfidence": [
-        0.011678,
-        0.013012
-      ],
-      "scoreUnit": "ms/op",
-      "scorePercentiles": {
-        "0.0": 0.0116,
-        "50.0": 0.0123,
-        "90.0": 0.0127,
-        "95.0": 0.0129,
-        "99.0": 0.013,
-        "99.9": 0.013,
-        "100.0": 0.013
-      }
-    },
-    "secondaryMetrics": {
-      "gc.alloc.rate.norm": {
-        "score": 512.0,
-        "scoreUnit": "B/op"
-      }
-    },
-    "iterationCount": 5
-  },
-  {
-    "jmhVersion": "1.36",
-    "benchmark": "benchmarks.PrimesBenchmarks.sumPrimesMedium",
-    "mode": "avgt",
-    "threads": 1,
-    "forks": 1,
-    "warmupIterations": 5,
-    "warmupTime": "10 s",
-    "warmupBatchSize": 0,
-    "measurementIterations": 5,
-    "measurementTime": "10 s",
-    "measurementBatchSize": 0,
-    "params": {},
-    "primaryMetric": {
-      "score": 0.156789,
-      "scoreErrorConfidence": 0.95,
-      "scoreConfidence": [
-        0.149234,
-        0.164344
-      ],
-      "scoreUnit": "ms/op",
-      "scorePercentiles": {
-        "0.0": 0.149,
-        "50.0": 0.156,
-        "90.0": 0.161,
-        "95.0": 0.163,
-        "99.0": 0.164,
-        "99.9": 0.164,
-        "100.0": 0.164
-      }
-    },
-    "secondaryMetrics": {
-      "gc.alloc.rate.norm": {
-        "score": 2048.0,
-        "scoreUnit": "B/op"
-      }
-    },
-    "iterationCount": 5
-  },
-  {
-    "jmhVersion": "1.36",
-    "benchmark": "benchmarks.PrimesBenchmarks.primeFactorsSmall",
-    "mode": "avgt",
-    "threads": 1,
-    "forks": 1,
-    "warmupIterations": 5,
-    "warmupTime": "10 s",
-    "warmupBatchSize": 0,
-    "measurementIterations": 5,
-    "measurementTime": "10 s",
-    "measurementBatchSize": 0,
-    "params": {},
-    "primaryMetric": {
-      "score": 0.008234,
-      "scoreErrorConfidence": 0.95,
-      "scoreConfidence": [
-        0.007834,
-        0.008634
-      ],
-      "scoreUnit": "ms/op",
-      "scorePercentiles": {
-        "0.0": 0.0078,
-        "50.0": 0.0082,
-        "90.0": 0.0084,
-        "95.0": 0.0085,
-        "99.0": 0.0086,
-        "99.9": 0.0086,
-        "100.0": 0.0086
-      }
-    },
-    "secondaryMetrics": {
-      "gc.alloc.rate.norm": {
-        "score": 256.0,
-        "scoreUnit": "B/op"
-      }
-    },
-    "iterationCount": 5
-  },
-  {
-    "jmhVersion": "1.36",
-    "benchmark": "benchmarks.PrimesBenchmarks.primeFactorsMedium",
-    "mode": "avgt",
-    "threads": 1,
-    "forks": 1,
-    "warmupIterations": 5,
-    "warmupTime": "10 s",
-    "warmupBatchSize": 0,
-    "measurementIterations": 5,
-    "measurementTime": "10 s",
-    "measurementBatchSize": 0,
-    "params": {},
-    "primaryMetric": {
-      "score": 0.234567,
-      "scoreErrorConfidence": 0.95,
-      "scoreConfidence": [
-        0.223234,
-        0.2459
-      ],
-      "scoreUnit": "ms/op",
-      "scorePercentiles": {
-        "0.0": 0.223,
-        "50.0": 0.234,
-        "90.0": 0.242,
-        "95.0": 0.245,
-        "99.0": 0.246,
-        "99.9": 0.246,
-        "100.0": 0.246
-      }
-    },
-    "secondaryMetrics": {
-      "gc.alloc.rate.norm": {
-        "score": 4096.0,
-        "scoreUnit": "B/op"
-      }
-    },
-    "iterationCount": 5
-  },
-  {
-    "jmhVersion": "1.36",
-    "benchmark": "benchmarks.PrimesBenchmarks.isPrimeSmall",
-    "mode": "avgt",
-    "threads": 1,
-    "forks": 1,
-    "warmupIterations": 5,
-    "warmupTime": "10 s",
-    "warmupBatchSize": 0,
-    "measurementIterations": 5,
-    "measurementTime": "10 s",
-    "measurementBatchSize": 0,
-    "params": {},
-    "primaryMetric": {
-      "score": 0.003456,
-      "scoreErrorConfidence": 0.95,
-      "scoreConfidence": [
-        0.003234,
-        0.003678
-      ],
-      "scoreUnit": "ms/op",
-      "scorePercentiles": {
-        "0.0": 0.0032,
-        "50.0": 0.0034,
-        "90.0": 0.0035,
-        "95.0": 0.0036,
-        "99.0": 0.0036,
-        "99.9": 0.0036,
-        "100.0": 0.0036
-      }
-    },
-    "secondaryMetrics": {
-      "gc.alloc.rate.norm": {
-        "score": 128.0,
-        "scoreUnit": "B/op"
-      }
-    },
-    "iterationCount": 5
-  },
-  {
-    "jmhVersion": "1.36",
-    "benchmark": "benchmarks.ControlBenchmarks.sumRangeSmall",
-    "mode": "avgt",
-    "threads": 1,
-    "forks": 1,
-    "warmupIterations": 5,
-    "warmupTime": "10 s",
-    "warmupBatchSize": 0,
-    "measurementIterations": 5,
-    "measurementTime": "10 s",
-    "measurementBatchSize": 0,
-    "params": {},
-    "primaryMetric": {
-      "score": 0.001234,
-      "scoreErrorConfidence": 0.95,
-      "scoreConfidence": [
-        0.001123,
-        0.001345
-      ],
-      "scoreUnit": "ms/op",
-      "scorePercentiles": {
-        "0.0": 0.0011,
-        "50.0": 0.0012,
-        "90.0": 0.0013,
-        "95.0": 0.0013,
-        "99.0": 0.0013,
-        "99.9": 0.0013,
-        "100.0": 0.0013
-      }
-    },
-    "secondaryMetrics": {
-      "gc.alloc.rate.norm": {
-        "score": 64.0,
-        "scoreUnit": "B/op"
-      }
-    },
-    "iterationCount": 5
-  },
-  {
-    "jmhVersion": "1.36",
-    "benchmark": "benchmarks.ControlBenchmarks.sumRangeLarge",
-    "mode": "avgt",
-    "threads": 1,
-    "forks": 1,
-    "warmupIterations": 5,
-    "warmupTime": "10 s",
-    "warmupBatchSize": 0,
-    "measurementIterations": 5,
-    "measurementTime": "10 s",
-    "measurementBatchSize": 0,
-    "params": {},
-    "primaryMetric": {
-      "score": 0.012345,
-      "scoreErrorConfidence": 0.95,
-      "scoreConfidence": [
-        0.011789,
-        0.012901
-      ],
-      "scoreUnit": "ms/op",
-      "scorePercentiles": {
-        "0.0": 0.0117,
-        "50.0": 0.0123,
-        "90.0": 0.0127,
-        "95.0": 0.0129,
-        "99.0": 0.0129,
-        "99.9": 0.0129,
-        "100.0": 0.0129
-      }
-    },
-    "secondaryMetrics": {
-      "gc.alloc.rate.norm": {
-        "score": 256.0,
-        "scoreUnit": "B/op"
-      }
-    },
-    "iterationCount": 5
-  },
-  {
-    "jmhVersion": "1.36",
-    "benchmark": "benchmarks.ControlBenchmarks.maxArraySmall",
-    "mode": "avgt",
-    "threads": 1,
-    "forks": 1,
-    "warmupIterations": 5,
-    "warmupTime": "10 s",
-    "warmupBatchSize": 0,
-    "measurementIterations": 5,
-    "measurementTime": "10 s",
-    "measurementBatchSize": 0,
-    "params": {},
-    "primaryMetric": {
-      "score": 0.002567,
-      "scoreErrorConfidence": 0.95,
-      "scoreConfidence": [
-        0.002345,
-        0.002789
-      ],
-      "scoreUnit": "ms/op",
-      "scorePercentiles": {
-        "0.0": 0.0023,
-        "50.0": 0.0025,
-        "90.0": 0.0027,
-        "95.0": 0.0027,
-        "99.0": 0.0027,
-        "99.9": 0.0027,
-        "100.0": 0.0027
-      }
-    },
-    "secondaryMetrics": {
-      "gc.alloc.rate.norm": {
-        "score": 128.0,
-        "scoreUnit": "B/op"
-      }
-    },
-    "iterationCount": 5
-  },
-  {
-    "jmhVersion": "1.36",
-    "benchmark": "benchmarks.ControlBenchmarks.sumSquareSmall",
-    "mode": "avgt",
-    "threads": 1,
-    "forks": 1,
-    "warmupIterations": 5,
-    "warmupTime": "10 s",
-    "warmupBatchSize": 0,
-    "measurementIterations": 5,
-    "measurementTime": "10 s",
-    "measurementBatchSize": 0,
-    "params": {},
-    "primaryMetric": {
-      "score": 0.034567,
-      "scoreErrorConfidence": 0.95,
-      "scoreConfidence": [
-        0.032876,
-        0.036258
-      ],
-      "scoreUnit": "ms/op",
-      "scorePercentiles": {
-        "0.0": 0.0328,
-        "50.0": 0.0345,
-        "90.0": 0.0358,
-        "95.0": 0.0361,
-        "99.0": 0.0362,
-        "99.9": 0.0362,
-        "100.0": 0.0362
-      }
-    },
-    "secondaryMetrics": {
-      "gc.alloc.rate.norm": {
-        "score": 1024.0,
-        "scoreUnit": "B/op"
-      }
-    },
-    "iterationCount": 5
-  }
+    {
+        "jmhVersion" : "1.36",
+        "benchmark" : "benchmarks.SortBenchmarks.sortVectorSmall",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "C:\\Users\\BiaDigi\\.gradle\\jdks\\eclipse_adoptium-17-amd64-windows\\jdk-17.0.17+10\\bin\\java.exe",
+        "jvmArgs" : [
+            "-Dfile.encoding=windows-1256",
+            "-Djava.io.tmpdir=C:\\Users\\BiaDigi\\Desktop\\sample java\\sample-project-java\\app\\build\\tmp\\jmh",
+            "-Duser.country=US",
+            "-Duser.language=en",
+            "-Duser.variant"
+        ],
+        "jdkVersion" : "17.0.17",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "17.0.17+10",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 2,
+        "measurementTime" : "300 ms",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 0.07579138401428723,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 0.0747134987593052,
+                "50.0" : 0.07579138401428723,
+                "90.0" : 0.07686926926926926,
+                "95.0" : 0.07686926926926926,
+                "99.0" : 0.07686926926926926,
+                "99.9" : 0.07686926926926926,
+                "99.99" : 0.07686926926926926,
+                "99.999" : 0.07686926926926926,
+                "99.9999" : 0.07686926926926926,
+                "100.0" : 0.07686926926926926
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    0.07686926926926926,
+                    0.0747134987593052
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
 ]
+
+

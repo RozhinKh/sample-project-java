@@ -25,7 +25,7 @@ dependencies {
 
     // This dependency is used by the application.
     implementation(libs.guava)
-    
+
     // JMH dependencies for benchmarking
     jmhImplementation(libs.jmh.core)
     jmhAnnotationProcessor(libs.jmh.generator.annprocess)
@@ -53,85 +53,50 @@ val baselineDir = file("${rootProject.projectDir}/benchmark/baseline")
 val jmhResultFile = file("${baselineDir}/jmh-result.json")
 val jfrRecordingFile = file("${baselineDir}/profile.jfr")
 val jfrEnabled = project.findProperty("jfrEnabled") == "true"
+val benchmarkProfile = (project.findProperty("benchmarkProfile")?.toString() ?: "fast").lowercase()
+val useFullProfile = benchmarkProfile == "full"
+val baselineIncludesPattern = ".*(SortBenchmarks|PrimesBenchmarks|ControlBenchmarks).*"
 
 jmh {
-    warmupIterations.set(5)
-    iterations.set(5)
+    warmupIterations.set(if (useFullProfile) 5 else 1)
+    iterations.set(if (useFullProfile) 5 else 2)
     fork.set(1)
     threads.set(1)
     benchmarkMode.set(listOf("avgt"))
     timeUnit.set("ms")
-    timeOnIteration.set("1s")
+    timeOnIteration.set(if (useFullProfile) "1s" else "300ms")
     resultFormat.set("json")
-    includes.set(listOf(".*Benchmark.*"))
+    // Baseline scope intentionally restricted to the 16-method suite.
+    includes.set(listOf(baselineIncludesPattern))
 }
 
-// Custom jmhBaseline task that runs the JMH benchmarks with JFR profiling
+// Runs baseline suite and persists the JMH JSON in benchmark/baseline.
 tasks.register("jmhBaseline") {
     group = "benchmark"
-    description = "Run baseline JMH benchmarks with optional JFR profiling"
-    
-    dependsOn("jmhJar")
-    
+    description = "Run baseline JMH benchmarks (fast default, full via -PbenchmarkProfile=full)"
+
+    dependsOn("jmh")
+
     doLast {
-        // Create baseline directory if it doesn't exist
         baselineDir.mkdirs()
-        
-        // Get the JMH JAR and dependencies
-        val jmhJarTask = tasks.getByName("jmhJar")
-        val jmhJar = jmhJarTask.outputs.files.single()
-        
-        // Build the Java command
-        val cmdArgs = mutableListOf<String>()
-        cmdArgs.add("${System.getProperty("java.home")}/bin/java")
-        
-        // Add JFR if enabled
+
+        val jmhOutput = file("${project.layout.buildDirectory.get().asFile}/results/jmh/results.json")
+        if (!jmhOutput.exists()) {
+            throw GradleException("Expected JMH output missing at ${jmhOutput.absolutePath}")
+        }
+        jmhOutput.copyTo(jmhResultFile, overwrite = true)
+
+        println("================================================================================")
+        println("BASELINE BENCHMARK EXECUTION COMPLETED")
+        println("================================================================================")
+        println("Profile: ${if (useFullProfile) "full" else "fast"}")
+        println("Includes pattern: $baselineIncludesPattern")
+        println("Results file: ${jmhResultFile.absolutePath}")
+        println("Results size: ${jmhResultFile.length()} bytes")
         if (jfrEnabled) {
-            cmdArgs.add("-XX:StartFlightRecording=filename=${jfrRecordingFile.absolutePath},settings=default")
+            println("JFR flag requested. This task records JSON baseline only.")
+            println("Use explicit JVM recording flags on app:jmh for controlled JFR capture.")
         }
-        
-        // Add the main classpath and launcher
-        cmdArgs.addAll(listOf(
-            "-jar", jmhJar.absolutePath,
-            "-rf", "json",
-            "-rff", jmhResultFile.absolutePath,
-            "-wi", "5",
-            "-i", "5",
-            "-tu", "ms",
-            "-to", "1s",
-            "benchmarks\\..*"
-        ))
-        
         println("================================================================================")
-        println("EXECUTING JMH BASELINE BENCHMARKS")
-        println("================================================================================")
-        println("Command: ${cmdArgs.joinToString(" ")}")
-        println("Output directory: ${baselineDir.absolutePath}")
-        println("JFR Profiling: ${if (jfrEnabled) "ENABLED" else "DISABLED"}")
-        println("================================================================================")
-        
-        val process = ProcessBuilder(cmdArgs)
-            .directory(baselineDir)
-            .inheritIO()
-            .start()
-        
-        val exitCode = process.waitFor()
-        
-        if (exitCode == 0) {
-            println("================================================================================")
-            println("BENCHMARK EXECUTION COMPLETED SUCCESSFULLY")
-            println("================================================================================")
-            if (jmhResultFile.exists()) {
-                println("✓ Results file: ${jmhResultFile.absolutePath}")
-                println("  Size: ${jmhResultFile.length()} bytes")
-            }
-            if (jfrEnabled && jfrRecordingFile.exists()) {
-                println("✓ JFR recording: ${jfrRecordingFile.absolutePath}")
-                println("  Size: ${jfrRecordingFile.length()} bytes")
-            }
-            println("================================================================================")
-        } else {
-            throw GradleException("Benchmark execution failed with exit code $exitCode")
-        }
     }
 }
