@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration version="2.0" label="Scenario B Benchmarks">
+    <event name="jdk.ExecutionSample">
+        <setting name="enabled">true</setting>
+        <setting name="period">100ms</setting>
+    </event>
+    <event name="jdk.GarbageCollection">
+        <setting name="enabled">true</setting>
+    </event>
+    <event name="jdk.GCPhaseParallel">
+        <setting name="enabled">true</setting>
+    </event>
+    <event name="jdk.ObjectAllocationInNewTLAB">
+        <setting name="enabled">true</setting>
+    </event>
+    <event name="jdk.ObjectAllocationOutsideTLAB">
+        <setting name="enabled">true</setting>
+    </event>
+    <event name="jdk.JavaMonitorEnter">
+        <setting name="enabled">true</setting>
+        <setting name="threshold">10ms</setting>
+    </event>
+    <event name="jdk.JavaMonitorWait">
+        <setting name="enabled">true</setting>
+    </event>
+    <event name="jdk.ThreadPark">
+        <setting name="enabled">true</setting>
+    </event>
+    <event name="jdk.FileRead">
+        <setting name="enabled">true</setting>
+        <setting name="threshold">1ms</setting>
+    </event>
+    <event name="jdk.FileWrite">
+        <setting name="enabled">true</setting>
+        <setting name="threshold">1ms</setting>
+    </event>
+</configuration>

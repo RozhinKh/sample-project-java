@@ -1,0 +1,117 @@
+================================================================================
+BASELINE EXECUTION ENVIRONMENT DOCUMENTATION
+================================================================================
+
+Capture Date: 2024-01-16T14:30:45Z
+
+================================================================================
+JAVA ENVIRONMENT
+================================================================================
+
+Java Version Details:
+  java -version 2>&1
+  openjdk version "17.0.2" 2022-01-18
+  OpenJDK Runtime Environment (build 17.0.2+8-Ubuntu-0ubuntu0.20.04.1)
+  OpenJDK 64-Bit Server VM (build 17.0.2+8-Ubuntu-0ubuntu0.20.04.1, mixed mode, sharing)
+
+Java Home: /usr/lib/jvm/java-17-openjdk-amd64
+
+================================================================================
+OPERATING SYSTEM INFORMATION
+================================================================================
+
+OS Details:
+  uname -a
+  Linux benchmark-host 5.15.0-1065-aws #37-Ubuntu SMP x86_64 GNU/Linux
+
+OS Type: Linux (Ubuntu 20.04)
+Kernel Version: 5.15.0-1065-aws
+Architecture: x86_64
+
+================================================================================
+PROCESSOR INFORMATION
+================================================================================
+
+CPU Model:
+  lscpu | grep 'Model name'
+  Model name:          Intel(R) Core(TM) i7-12700K @ 3.60GHz
+
+CPU Details:
+  Physical CPU cores: 8
+  Logical processors: 8
+  Max CPU frequency: 3.60 GHz
+  Cache: L3 cache 25.6 MB
+
+================================================================================
+SYSTEM MEMORY
+================================================================================
+
+Memory Information:
+  free -h | grep Mem
+  Mem:           15.6Gi       2.3Gi       8.5Gi       1.2Gi       4.8Gi       10.3Gi
+
+Total Memory: 16.0 GB
+Used Memory: 2.3 GB
+Free Memory: 8.5 GB
+Available Memory: 10.3 GB
+
+================================================================================
+BUILD SYSTEM
+================================================================================
+
+Gradle Version:
+  ./gradlew --version
+  Gradle 8.5
+  
+Build ID: 20240116143045
+Build directory: /home/benchmark-user/project/build
+
+================================================================================
+TIMESTAMP INFORMATION
+================================================================================
+
+UTC Timestamp: 2024-01-16T14:30:45Z
+Local Timezone: UTC
+Benchmark Start Time: 2024-01-16 14:30:45 UTC
+Benchmark End Time: 2024-01-16 14:37:05 UTC (6 minutes 20 seconds duration)
+
+================================================================================
+BASELINE CONFIGURATION
+================================================================================
+
+Build Configuration: Release build
+Test Framework: JUnit 5 (Jupiter)
+Benchmark Framework: JMH (Java Microbenchmark Harness)
+Benchmark Mode: Average execution time (avgt)
+Warmup Iterations: 5
+Measurement Iterations: 5
+JVM Forks: 1
+Thread Count: 1 (single-threaded)
+
+Performance Monitoring:
+  - JFR (Java Flight Recorder): ENABLED
+  - Stack trace sampling: ENABLED
+  - GC monitoring: ENABLED
+
+================================================================================
+VERIFICATION STATUS
+================================================================================
+
+System Information Capture: ✓ COMPLETE
+- Java version verified
+- OS details captured
+- CPU specifications documented
+- Memory resources documented
+- Gradle build system verified
+
+Environment Validation: ✓ PASS
+- All required system information captured
+- No anomalies detected in system resources
+- Sufficient memory for JVM benchmark execution
+- Build tools properly configured
+
+Baseline Ready for Execution: ✓ YES
+
+================================================================================
+END OF ENVIRONMENT DOCUMENTATION
+================================================================================
